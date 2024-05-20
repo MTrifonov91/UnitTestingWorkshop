@@ -30,23 +30,6 @@ class GradeCalculatorTest {
         assertEquals("Pass", actualGrade);
     }
 
-    // write a test for computeGrade() method for "path b" (return "Fail")
-    @Test
-    public void computeGradeFail() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        // Arrange  / Given
-        // Initialize class under test
-        // Use reflection to initialize the method under test
-        // set the method instance to be accessible
-        GradeCalculator gc = new GradeCalculator();
-        Method method = gc.getClass().getDeclaredMethod("computeGrade", Integer.class);
-        method.setAccessible(true);
+    //TODO write a test for computeGrade() method for "path b" (return "Fail")
 
-        // Act  / When
-        // Invoke the method and collect the return
-        String actualGrade = (String) method.invoke(gc, 69);
-
-        // Assert  / Then
-        // write an assertEquals() assertion
-        assertEquals("Fail", actualGrade);
-    }
 }

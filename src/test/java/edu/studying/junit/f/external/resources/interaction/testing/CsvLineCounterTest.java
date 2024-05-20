@@ -56,4 +56,8 @@ class CsvLineCounterTest {
         // write an assertEquals() assertion
         assertEquals(3, actualLines);
     }
+
+    //TODO write a test for countCharactersInFile() method for the happy path
+    // using junit @TempDir annotation to create a temporary file
+
 }

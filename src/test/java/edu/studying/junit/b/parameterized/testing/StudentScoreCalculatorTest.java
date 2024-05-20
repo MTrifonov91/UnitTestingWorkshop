@@ -72,4 +72,14 @@ class StudentScoreCalculatorTest {
                 Arguments.of(100, 100, 10000)
         );
     }
+
+    //TODO write a @ParameterizedTest for calculateMediumScore() method
+    // that uses a "method" as source of test data
+    // provide valid data for Expected values for both paths (a and b)
+
+
+    //TODO write a @ParameterizedTest for calculateMediumScore() method
+    // that uses a "method" as source of test data
+    // provide valid data for Expected values for both paths (a and b)
+
 }

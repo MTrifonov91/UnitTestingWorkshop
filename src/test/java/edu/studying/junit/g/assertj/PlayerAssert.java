@@ -36,16 +36,13 @@ public class PlayerAssert extends AbstractAssert<PlayerAssert, Players> {
         return this;
     }
 
-    // custom assertion hasAge()
+    //TODO write a custom assertion hasAge()
     // must return PlayerAssert class instance
     // takes the age as int as parameter
-    public PlayerAssert hasAge(int expectedAge) {
 
-        // logical part of the assertion using "actual" key word to refer to the tested object
-        if (!(actual.getAge() == expectedAge)) {
-            failWithMessage("Expected age: " + expectedAge + ", but was: " + actual.getAge());
-        }
 
-        return this;
-    }
+    //TODO custom assertion hasSport()
+    // must return PlayerAssert class instance
+    // takes the name as String as parameter
+
 }

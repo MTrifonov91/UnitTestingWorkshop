@@ -11,6 +11,7 @@ import java.util.Objects;
 public class Players {
     private String name;
     private int age;
+    private String sport;
 
     @Override
     public boolean equals(Object o) {

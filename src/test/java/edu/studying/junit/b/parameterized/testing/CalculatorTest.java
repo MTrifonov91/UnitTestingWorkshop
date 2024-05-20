@@ -52,11 +52,23 @@ class CalculatorTest {
         assertEquals(expectedOutput, calculator.squareInteger(inputValue));
     }
 
-    // write a test with null as parameter (path a)
-    @Test
-    public void squareIntegerValidBoundaryTestNullInput() {
-        // write an "assertEquals()" assertion
-        assertEquals(0, calculator.squareInteger(null));
-    }
+    //TODO write a test for squareInteger() method with null as parameter (path a)
 
+
+    //TODO write a @ParameterizedTest for cubeInteger() method
+    // that uses a "Csv file" as source of test data
+    // provide valid data for Expected values (path c)
+
+
+    //TODO write a @ParameterizedTest for cubeInteger() method
+    // that uses a "@ValueSource" as source of test data
+    // provide valid data for INVALID values (Boundary values) (path b)
+
+
+    //TODO write a @ParameterizedTest for cubeInteger() method
+    // that uses a "@CsvSource" as source of test data
+    // provide valid data for VALID values (Boundary values) (path c)
+
+
+    //TODO write a test for cubeInteger() method with null as parameter (path a)
 }

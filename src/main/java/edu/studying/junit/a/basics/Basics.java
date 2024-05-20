@@ -15,6 +15,7 @@ public class Basics {
     // method takes an int array as parameter
     // returns the biggest one
     public int max(int[] arr) {
+        // path a
         if (arr.length == 0) return -1;
 
         int max = arr[0];
@@ -23,6 +24,7 @@ public class Basics {
                 max = arr[i];
             }
         }
+        // path b
         return max;
     }
 
