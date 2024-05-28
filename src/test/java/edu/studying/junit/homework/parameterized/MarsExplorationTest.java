@@ -8,5 +8,10 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 class MarsExplorationTest {
 
     // TODO write a parameterized test for marsExploration() method via "@CsvFileSource"
+    @ParameterizedTest
+    @CsvFileSource(resources = "/mars_exploration_test_data.csv", useHeadersInDisplayName = true)
+    void marsExploration(String sentMessage, int changedLetters) {
+        Assertions.assertEquals(changedLetters, MarsExploration.marsExploration(sentMessage));
+    }
 
 }

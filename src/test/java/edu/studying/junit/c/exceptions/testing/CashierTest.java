@@ -18,5 +18,11 @@ class CashierTest {
     //TODO write a test for "validateTransaction()" method
     // on InvalidTransactionAmountException thrown path
     // write an assertThrows() assertion with InvalidTransactionAmountException
+    @Test
+    public void amountIsValidThrowsInvalidAmountException() {
+        // write an assertThrows() assertion with InvalidTransactionAmountException
+        assertThrows(InvalidTransactionAmountException.class
+                , () -> Cashier.validateTransaction("EUR", -10));
+    }
 
 }

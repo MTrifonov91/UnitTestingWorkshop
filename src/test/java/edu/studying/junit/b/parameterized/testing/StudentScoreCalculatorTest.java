@@ -76,10 +76,52 @@ class StudentScoreCalculatorTest {
     //TODO write a @ParameterizedTest for calculateMediumScore() method
     // that uses a "method" as source of test data
     // provide valid data for Expected values for both paths (a and b)
+    @ParameterizedTest
+    // specify the data source method
+    @MethodSource("secondTestValuesAsObjects")
+    // add test data as parameters to the test method
+    public void mediumScoreCalculatorTestWithObjectsAsValues(int mathScore, int historyScore, int informaticsScore, int englishScore, int expectedResult) {
+        sc.calculateMediumScore(mathScore, historyScore, informaticsScore, englishScore);
+        assertEquals(expectedResult, sc.getMediumScore());
+    }
 
 
     //TODO write a @ParameterizedTest for calculateMediumScore() method
     // that uses a "method" as source of test data
     // provide valid data for Expected values for both paths (a and b)
+    //TODO write a @ParameterizedTest for calculateMediumScore() method
+    // that uses a "method" as source of test data
+    // provide valid data for Expected values for both paths (a and b)
+    @ParameterizedTest
+    // specify the data source method
+    @MethodSource("secondTestValuesFromStreams")
+    // add test data as parameters to the test method
+    public void mediumScoreCalculatorTestWithValuesFromStreams(int mathScore, int historyScore, int informaticsScore, int englishScore, int expectedResult) {
+        sc.calculateMediumScore(mathScore, historyScore, informaticsScore, englishScore);
+        assertEquals(expectedResult, sc.getMediumScore());
+    }
 
+    // method serving as source for test data, returning array objects with test values
+    private static Object[] secondTestValuesAsObjects() {
+        return new Object[]{
+                new Object[]{50, 50, 50, 50, 50},
+                new Object[]{-10, 50, 50, 50, -1},
+                new Object[]{50, 1010, 80, 50, -1},
+                new Object[]{101, 100, 99, 98, -1},
+                new Object[]{0, 0, 0, 0, 0},
+                new Object[]{100, 100, 100, 100, 100}
+        };
+    }
+
+    // method serving as source for test data, returning Stream of arguments with test values
+    private static Stream<Arguments> secondTestValuesFromStreams() {
+        return Stream.of(
+                Arguments.of(50, 50, 50, 50, 50),
+                Arguments.of(-10, 50, 50, 50, -1),
+                Arguments.of(50, 1010, 80, 50, -1),
+                Arguments.of(101, 100, 99, 98, -1),
+                Arguments.of(0, 0, 0, 0, 0),
+                Arguments.of(100, 100, 100, 100, 100)
+        );
+    }
 }

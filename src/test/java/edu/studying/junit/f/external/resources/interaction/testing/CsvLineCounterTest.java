@@ -59,5 +59,22 @@ class CsvLineCounterTest {
 
     //TODO write a test for countCharactersInFile() method for the happy path
     // using junit @TempDir annotation to create a temporary file
+    @Test
+    void countCharsFromFileUsingTemporaryDir(@TempDir Path tempDir) throws IOException {
+
+        // create the file for test
+        Path tempFile = Files.createTempFile(tempDir, "test", ".txt");
+
+        // create test data to be written to file
+        String csvData = "a,b,c\nd,e,f\ng";
+        // write test data to file
+        Files.write(tempFile, csvData.getBytes());
+
+        // run the method and collect its return
+        long actualLines = CsvLineCounter.countCharactersInFile(tempFile);
+
+        // write an assertEquals() assertion
+        assertEquals(13, actualLines);
+    }
 
 }

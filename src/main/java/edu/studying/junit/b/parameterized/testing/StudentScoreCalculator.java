@@ -31,7 +31,7 @@ public class StudentScoreCalculator {
             mediumScore = -1;
         } else {
             // path b
-            mediumScore = (mathsScore * historyScore * informaticsScore * englishScore) / 4;
+            mediumScore = (mathsScore + historyScore + informaticsScore + englishScore) / 4;
         }
     }
 

@@ -25,7 +25,7 @@ public class Calculator {
 
     // method that returns the passed parameter multiplied by itself twice
     public int cubeInteger(Integer i){
-        i = verifySquaredArgument(i);
+        i = verifyCubedArgument(i);
         return i * i * i;
     }
 
