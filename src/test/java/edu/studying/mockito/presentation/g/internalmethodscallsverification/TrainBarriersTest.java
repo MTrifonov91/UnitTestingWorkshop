@@ -10,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
 import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -38,7 +39,7 @@ class TrainBarriersTest {
     void testPassengerEntryOnInternalMethodCalls() {
 
         trainBarriers.passengerEntry(PASSENGER_ID);
-        verify(passengerRepositoryMock).registerPassengerOnTrain(PASSENGER_ID);
+        verify(passengerRepositoryMock, times(2)).registerPassengerOnTrain(PASSENGER_ID);
         verify(emailServiceMock).notifyPassenger(PASSENGER_ID);
     }
 

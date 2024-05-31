@@ -91,9 +91,9 @@
                 <version>3.2.5</version>
                 <configuration>
                     <argLine>-XX:+EnableDynamicAgentLoading -Xshare:off</argLine>
-                    <groups>MocksStubs</groups>
-                    <!-- Include or exclude specific tags -->
-                    <!-- <excludedGroups>tagForExcluded</excludedGroups> -->
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
                 </configuration>
             </plugin>
         </plugins>
