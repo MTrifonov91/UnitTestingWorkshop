@@ -20,6 +20,7 @@ class TemperatureConverterTest {
     // @ExtendWith annotation allows you to register extensions, which can intercept the test execution lifecycle to add additional behavior or services
     void testCelsiusToFahrenheit(double celsius, double fahrenheit) {
         double result = TemperatureConverter.celsiusToFahrenheit(celsius);
+        System.out.println("Input fahrenheit: " + fahrenheit + " -> Results in " + result + " Celsius");
         assertEquals(fahrenheit, result, 0.001);
     }
 

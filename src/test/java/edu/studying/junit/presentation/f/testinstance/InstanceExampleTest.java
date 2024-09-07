@@ -6,8 +6,8 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.Timeout;
 
 import static org.junit.jupiter.api.Assertions.*;
-
-@TestInstance(TestInstance.Lifecycle.PER_METHOD)
+// PER_METHOD is the default parameter
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @Tag("development")
 class InstanceExampleTest {
 
@@ -34,7 +34,7 @@ class InstanceExampleTest {
     // @Timeout annotation is used to define a timeout for a method or all testable methods within one class and its @Nested classes.
     // This annotation may also be used on lifecycle methods annotated with @BeforeAll, @BeforeEach, @AfterEach, or @AfterAll.
     void test_timeout() throws InterruptedException {
-        Thread.sleep(4000);
+        Thread.sleep(2000);
         System.out.println(result);
     }
 }

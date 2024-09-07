@@ -100,6 +100,7 @@ class AdvancedAnnotationsExampleTest {
     @EmptySource
     // @Empty source annotation is used for a single empty argument of type String, List, Set, Map, or arrays
     void testCalculateAverageWithEmptyList(List<Double> input) {
+        System.out.println(input);
         Double result = advancedAnnotationsExample.calculateAverage(input);
         assertNull(result);
     }
@@ -108,6 +109,7 @@ class AdvancedAnnotationsExampleTest {
     @NullSource
     // @NullSource source annotation is used for a single null argument
     void testCalculateAverageWithNullList(List<Double> input) {
+        System.out.println(input);
         Double result = advancedAnnotationsExample.calculateAverage(input);
         assertNull(result);
     }
@@ -116,6 +118,7 @@ class AdvancedAnnotationsExampleTest {
     @NullAndEmptySource
     // @NullAndEmptySource source annotation is used for a single null and then a single empty argument of type String, List, Set, Map, or arrays
     void testCalculateAverageWithNullAndEmptyList(List<Double> input) {
+        System.out.println(input);
         Double result = advancedAnnotationsExample.calculateAverage(input);
         assertNull(result);
     }

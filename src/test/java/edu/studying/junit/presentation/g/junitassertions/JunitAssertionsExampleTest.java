@@ -3,10 +3,7 @@ package edu.studying.junit.presentation.g.junitassertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -112,12 +109,13 @@ class JunitAssertionsExampleTest {
     @Test
     void testAssertNotSame() {
         JunitAssertionsExample example2 = new JunitAssertionsExample();
+        assertEquals(example, example2);
         assertNotSame(example2, example);
     }
 
     @Test
     void testAssertThrows() {
-        assertThrows(IllegalArgumentException.class, () -> example.divide(1, 0));
+        assertThrows(NoSuchElementException.class, () -> example.divide(1, 0));
     }
 
     @Test

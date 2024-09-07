@@ -36,6 +36,7 @@ class TestFactoryExampleTest {
         // Generate dynamic tests
         return testCases.stream().map(testCase ->
                 DynamicTest.dynamicTest(testCase.getDescription(), () -> {
+                    System.out.println("Expected: " + testCase.getExpected() + " -> Actual: " + testFactoryExample.sum(testCase.getNumbers()));
                     assertEquals(testCase.getExpected(), testFactoryExample.sum(testCase.getNumbers()));
                 })
         );
