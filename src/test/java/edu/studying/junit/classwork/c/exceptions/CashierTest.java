@@ -1,10 +1,8 @@
 package edu.studying.junit.classwork.c.exceptions;
 
-import edu.studying.junit.classwork.c.exceptions.Cashier;
-import edu.studying.junit.classwork.c.exceptions.InvalidTransactionAmountException;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 // test class to test Cashier.class methods
 class CashierTest {
@@ -20,11 +18,6 @@ class CashierTest {
     //TODO write a test for "validateTransaction()" method
     // on InvalidTransactionAmountException thrown path
     // write an assertThrows() assertion with InvalidTransactionAmountException
-    @Test
-    public void amountIsValidThrowsInvalidAmountException() {
-        // write an assertThrows() assertion with InvalidTransactionAmountException
-        assertThrows(InvalidTransactionAmountException.class
-                , () -> Cashier.validateTransaction("EUR", -10));
-    }
+
 
 }

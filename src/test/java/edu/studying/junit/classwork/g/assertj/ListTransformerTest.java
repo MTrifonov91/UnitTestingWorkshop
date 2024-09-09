@@ -55,34 +55,9 @@ class ListTransformerTest {
 
     }
 
-    // write a test for containsLetterAndSort() method using both JUNIT and ASSERTJ assertions
+    //TODO write a test for containsLetterAndSort() method using both JUNIT and ASSERTJ assertions
     @Test
     public void containsLetterAndSortTest() {
-        // create test data for methods parameters
-        // List of Items
-        Item a = new Item(10, "raspberry");
-        Item b = new Item(2, "banana");
-        Item c = new Item(1, "apricot");
-        List<Item> items = Arrays.asList(a, b, c);
-        // CharSequence
-        CharSequence cs = "b";
-        // collect method's return
-        List<Item> itemsWithB = listTransformer.containsLetterAndSort(cs, items);
-        // declare expected return
-        List<Item> expected = Arrays.asList(b, a);
 
-        // write assertions with JUnit
-        // validate List is not null, has expected size and is in expected order
-        assertNotNull(itemsWithB);
-        assertEquals(2, itemsWithB.size());
-        assertIterableEquals(expected, itemsWithB);
-
-        // write assertions with AssertJ
-        // validate List is not null, has expected size and is in expected order
-        Assertions.assertThat(itemsWithB)
-                .hasSize(2)
-                .isSortedAccordingTo(Item::compareTo)
-                // or using containsExactlyElementsOf()
-                .containsExactlyElementsOf(expected);
     }
 }
