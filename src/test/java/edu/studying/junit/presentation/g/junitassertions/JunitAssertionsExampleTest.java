@@ -22,11 +22,11 @@ class JunitAssertionsExampleTest {
         // Given/Arrange
         double expected = 3.33;
         double delta = 0.01;
-        int inputDivident = 10;
+        int inputDividend = 10;
         int inputDivisor = 3;
 
         // When/Act
-        double actual = example.divide(inputDivident, inputDivisor);
+        double actual = example.divide(inputDividend, inputDivisor);
 
         // Then/Assert
         assertEquals(expected, actual, delta, "Result of the division should be " + expected + " with approximation of " + delta);

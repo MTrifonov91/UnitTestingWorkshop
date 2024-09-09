@@ -106,20 +106,4 @@ class ChessPlayerTest {
 
     }
 
-    //TODO -> exclude from repo
-    // write a test on getWins() and getPoints() method
-    // invoking assignScoreStats()
-    @Test
-    public void testAssignScoreStats() {
-
-    }
-
-    //TODO -> exclude from repo
-    // write a test on getCategory() method
-    // stubbing assignCategory() method's behavior with doAnswer()
-    @Test
-    public void getCategoryAssignedWithDoAnswer() throws Exception {
-
-    }
-
 }

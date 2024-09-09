@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TemperatureConverterTest {
 
@@ -17,7 +17,7 @@ class TemperatureConverterTest {
     // As such, it is designed to be invoked multiple times depending on the number of invocation contexts returned by the registered providers.
     // Must be used together with at least one provider
     @ExtendWith(TemperatureTestProvider.class)
-    // @ExtendWith annotation allows you to register extensions, which can intercept the test execution lifecycle to add additional behavior or services
+        // @ExtendWith annotation allows you to register extensions, which can intercept the test execution lifecycle to add additional behavior or services
     void testCelsiusToFahrenheit(double celsius, double fahrenheit) {
         double result = TemperatureConverter.celsiusToFahrenheit(celsius);
         System.out.println("Input fahrenheit: " + fahrenheit + " -> Results in " + result + " Celsius");
