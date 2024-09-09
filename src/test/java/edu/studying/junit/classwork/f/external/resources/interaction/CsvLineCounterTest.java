@@ -1,6 +1,5 @@
 package edu.studying.junit.classwork.f.external.resources.interaction;
 
-import edu.studying.junit.classwork.f.external.resources.interaction.CsvLineCounter;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
@@ -9,7 +8,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 // test class to test CsvLineCounter.class methods
 class CsvLineCounterTest {
@@ -63,19 +62,6 @@ class CsvLineCounterTest {
     @Test
     void countCharsFromFileUsingTemporaryDir(@TempDir Path tempDir) throws IOException {
 
-        // create the file for test
-        Path tempFile = Files.createTempFile(tempDir, "test", ".txt");
-
-        // create test data to be written to file
-        String csvData = "a,b,c\nd,e,f\ng";
-        // write test data to file
-        Files.write(tempFile, csvData.getBytes());
-
-        // run the method and collect its return
-        long actualLines = CsvLineCounter.countCharactersInFile(tempFile);
-
-        // write an assertEquals() assertion
-        assertEquals(13, actualLines);
     }
 
 }
