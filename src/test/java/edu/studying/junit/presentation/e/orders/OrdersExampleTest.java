@@ -43,7 +43,7 @@ class OrdersExampleTest {
 
         @Test
         @DisplayName("VIP test")
-        @Order(10)
+        @Order(1)
         public void testLeapYear_withOrdinaryYearsData_ReturnsFalse() {
             assertFalse(example.isLeapYear(2023));
         }

@@ -29,41 +29,20 @@ class TestFactoryExampleTest {
 
 
     @TestFactory
-    // @TestFactory annotation is treated like @Test annotation but denotes that a method is a test factory for dynamic tests
-    // the method should return a Stream of DynamicTest objects
-    // Useful when input data is not known in Compile time and only appears in Runtime
+        // @TestFactory annotation is treated like @Test annotation but denotes that a method is a test factory for dynamic tests
+        // the method should return a Stream of DynamicTest objects
+        // Useful when input data is not known in Compile time and only appears in Runtime
     Stream<DynamicTest> dynamicTestsForSum() {
         // Generate dynamic tests
         return testCases.stream().map(testCase ->
-                DynamicTest.dynamicTest(testCase.getDescription(), () -> {
-                    System.out.println("Expected: " + testCase.getExpected() + " -> Actual: " + testFactoryExample.sum(testCase.getNumbers()));
-                    assertEquals(testCase.getExpected(), testFactoryExample.sum(testCase.getNumbers()));
+                DynamicTest.dynamicTest(testCase.description(), () -> {
+                    System.out.println("Expected: " + testCase.expected() + " -> Actual: " + testFactoryExample.sum(testCase.numbers()));
+                    assertEquals(testCase.expected(), testFactoryExample.sum(testCase.numbers()));
                 })
         );
     }
 
-    // Helper class that acts as a test case template and used to create test case object with specific data
-    private static class TestCase {
-        private final List<Integer> numbers;
-        private final int expected;
-        private final String description;
-
-        public TestCase(List<Integer> numbers, int expected, String description) {
-            this.numbers = numbers;
-            this.expected = expected;
-            this.description = description;
-        }
-
-        public List<Integer> getNumbers() {
-            return numbers;
-        }
-
-        public int getExpected() {
-            return expected;
-        }
-
-        public String getDescription() {
-            return description;
-        }
+    // Helper class(record) that acts as a test data template and used to create test case object with specific data
+    private record TestCase(List<Integer> numbers, int expected, String description) {
     }
 }

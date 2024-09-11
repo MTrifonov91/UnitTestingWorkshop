@@ -14,6 +14,7 @@ class BasicAnnotationsExampleTest {
     // Method annotated with this annotation must be static
     public static void setUpBeforeClass() {
         basicAnnotationsExample = new BasicAnnotationsExample();
+        System.out.println("Before All step executed, class under test instantiated: " + basicAnnotationsExample);
     }
 
     @BeforeEach
