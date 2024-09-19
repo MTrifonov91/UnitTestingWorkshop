@@ -1,7 +1,5 @@
 package edu.studying.junit.classwork.g.assertj;
 
-import edu.studying.junit.classwork.g.assertj.Item;
-import edu.studying.junit.classwork.g.assertj.ListTransformer;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

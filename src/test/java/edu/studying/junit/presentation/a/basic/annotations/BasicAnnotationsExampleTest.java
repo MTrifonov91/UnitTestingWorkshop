@@ -18,8 +18,8 @@ class BasicAnnotationsExampleTest {
     }
 
     @BeforeEach
-    // @BeforeEach annotation is used to signal that the annotated method should be executed before each
-    // @Test, @RepeatedTest, @ParameterizedTest, @TestFactory, and @TestTemplate method in the current test class
+        // @BeforeEach annotation is used to signal that the annotated method should be executed before each
+        // @Test, @RepeatedTest, @ParameterizedTest, @TestFactory, and @TestTemplate method in the current test class
     void setUp(TestInfo testInfo) {
         System.out.println("Test " + testInfo.getDisplayName() + " started.");
     }
@@ -41,7 +41,7 @@ class BasicAnnotationsExampleTest {
         assertEquals(expectedResult, actualResult);
     }
 
-//    @Disabled
+    //    @Disabled
     // @Disabled annotation is used to disable a test class or a test method
     @RepeatedTest(value = 10, failureThreshold = 2)
     @DisplayName("String concatenation with spaces in between arguments")

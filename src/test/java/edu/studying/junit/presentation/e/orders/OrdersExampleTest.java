@@ -2,7 +2,8 @@ package edu.studying.junit.presentation.e.orders;
 
 import org.junit.jupiter.api.*;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @TestClassOrder(ClassOrderer.OrderAnnotation.class)
 // @TestClassOrder annotation is a type-level annotation that is used to configure a ClassOrderer for the @Nested test classes of the annotated test class.
@@ -18,7 +19,7 @@ class OrdersExampleTest {
     @Nested
     // @Nested annotation give the test writer more capabilities to express the relationship among several groups of tests.
     @Order(1)
-    // @Order annotation indicates the order of tests execution on a given level
+            // @Order annotation indicates the order of tests execution on a given level
     class PrimaryTests {
 
         @Test

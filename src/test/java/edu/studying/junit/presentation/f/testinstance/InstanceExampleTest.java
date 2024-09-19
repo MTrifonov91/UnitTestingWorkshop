@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.Timeout;
 
-import static org.junit.jupiter.api.Assertions.*;
 // PER_METHOD is the default parameter
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @Tag("development")
@@ -15,7 +14,7 @@ class InstanceExampleTest {
 
     @Test
     @Tag("feature-1")
-    // @Tag annotation is used for filtering the test cases based on the given criteria like characteristics, purpose, and features
+        // @Tag annotation is used for filtering the test cases based on the given criteria like characteristics, purpose, and features
     void test_substract() {
         System.out.println(result);
         result = 1;
@@ -31,8 +30,8 @@ class InstanceExampleTest {
 
     @Test
     @Timeout(3)
-    // @Timeout annotation is used to define a timeout for a method or all testable methods within one class and its @Nested classes.
-    // This annotation may also be used on lifecycle methods annotated with @BeforeAll, @BeforeEach, @AfterEach, or @AfterAll.
+        // @Timeout annotation is used to define a timeout for a method or all testable methods within one class and its @Nested classes.
+        // This annotation may also be used on lifecycle methods annotated with @BeforeAll, @BeforeEach, @AfterEach, or @AfterAll.
     void test_timeout() throws InterruptedException {
         Thread.sleep(2000);
         System.out.println(result);

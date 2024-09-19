@@ -1,7 +1,6 @@
 package edu.studying.junit.presentation.b.advanced.annotations;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
@@ -24,8 +23,8 @@ class AdvancedAnnotationsExampleTest {
     @ParameterizedTest(name = "Trim all spaces test")
     // @ParameterizedTest is used to run the same test method multiple times with different sets of input data
     @MethodSource("provideStringsForTrimAllSpaces")
-    // @MethodSource is used for one or more factory methods that generate a stream of arguments.
-    // method's name is provided as parameter
+        // @MethodSource is used for one or more factory methods that generate a stream of arguments.
+        // method's name is provided as parameter
     void testTrimAllSpaces(String input, String expectedResult) {
         String actualResult = advancedAnnotationsExample.trimAllSpaces(input);
 
@@ -35,8 +34,8 @@ class AdvancedAnnotationsExampleTest {
 
     @ParameterizedTest
     @ArgumentsSource(ReverseStringsProvider.class)
-    // @ArgumentsSource - uses a Class as parameter of the input data source, the provider class must implement
-    // JUnit's ArgumentsProvider interface
+        // @ArgumentsSource - uses a Class as parameter of the input data source, the provider class must implement
+        // JUnit's ArgumentsProvider interface
     void testReverseString(String input, String expectedResult) {
         String actualResult = advancedAnnotationsExample.reverseString(input);
 
@@ -45,14 +44,14 @@ class AdvancedAnnotationsExampleTest {
 
     @ParameterizedTest
     @ValueSource(strings = {"Madam", "Racecar", "Civic", "Radar", "Kayak", "Rotator"})
-    // @ValueSource - uses Type as parameter with data represented as an array
+        // @ValueSource - uses Type as parameter with data represented as an array
     void testIsPalindrome_True(String input) {
         assertTrue(advancedAnnotationsExample.isPalindrome(input));
     }
 
     @ParameterizedTest
     @EnumSource(FactorialTestCase.class)
-    // @EnumSource - uses an Enum as parameter of the input data source, the Enum itself becomes a test case
+        // @EnumSource - uses an Enum as parameter of the input data source, the Enum itself becomes a test case
     void testFactorial(FactorialTestCase testCase) {
         assertEquals(testCase.getExpected(), advancedAnnotationsExample.factorial(testCase.getInput()));
     }
@@ -72,8 +71,8 @@ class AdvancedAnnotationsExampleTest {
             "0, false",
             "1, false"
     })
-    // @CsvSource is used for argument lists as comma-separated values,
-    // can be used to provide any number of variables for the test for any amount of iterations
+        // @CsvSource is used for argument lists as comma-separated values,
+        // can be used to provide any number of variables for the test for any amount of iterations
     void testIsPrime(int input, boolean expectedResult) {
         boolean actualResult = advancedAnnotationsExample.isPrime(input);
 
@@ -82,9 +81,9 @@ class AdvancedAnnotationsExampleTest {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/find_max_test_data.csv", useHeadersInDisplayName = true)
-    // @CsvFileSource uses a CSV file and takes as parameters file location and, additionally settings like:
-    // useHeadersInDisplayName, ignoreLeadingAndTrailingWhitespace
-    // can be used to provide any number of variables for the test for any amount of iterations
+        // @CsvFileSource uses a CSV file and takes as parameters file location and, additionally settings like:
+        // useHeadersInDisplayName, ignoreLeadingAndTrailingWhitespace
+        // can be used to provide any number of variables for the test for any amount of iterations
     void testFindMax(String input, String expectedResult) {
         List<Integer> inputList = parseNumbers(input);
 
@@ -98,7 +97,7 @@ class AdvancedAnnotationsExampleTest {
 
     @ParameterizedTest
     @EmptySource
-    // @Empty source annotation is used for a single empty argument of type String, List, Set, Map, or arrays
+        // @Empty source annotation is used for a single empty argument of type String, List, Set, Map, or arrays
     void testCalculateAverageWithEmptyList(List<Double> input) {
         System.out.println(input);
         Double result = advancedAnnotationsExample.calculateAverage(input);
@@ -107,7 +106,7 @@ class AdvancedAnnotationsExampleTest {
 
     @ParameterizedTest
     @NullSource
-    // @NullSource source annotation is used for a single null argument
+        // @NullSource source annotation is used for a single null argument
     void testCalculateAverageWithNullList(List<Double> input) {
         System.out.println(input);
         Double result = advancedAnnotationsExample.calculateAverage(input);
@@ -116,7 +115,7 @@ class AdvancedAnnotationsExampleTest {
 
     @ParameterizedTest
     @NullAndEmptySource
-    // @NullAndEmptySource source annotation is used for a single null and then a single empty argument of type String, List, Set, Map, or arrays
+        // @NullAndEmptySource source annotation is used for a single null and then a single empty argument of type String, List, Set, Map, or arrays
     void testCalculateAverageWithNullAndEmptyList(List<Double> input) {
         System.out.println(input);
         Double result = advancedAnnotationsExample.calculateAverage(input);

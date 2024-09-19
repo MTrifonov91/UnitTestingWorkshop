@@ -42,7 +42,8 @@ class TestFactoryExampleTest {
         );
     }
 
-    // Helper class(record) that acts as a test data template and used to create test case object with specific data
+    // Helper class that acts as a test case template and used to create test case object with specific data
     private record TestCase(List<Integer> numbers, int expected, String description) {
+
     }
 }
